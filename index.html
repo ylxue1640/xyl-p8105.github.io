@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -220,6 +221,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -344,6 +348,14 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
 
 
 <h1 class="title toc-ignore">My awesome website</h1>
@@ -359,8 +371,8 @@ div.tocify {
 <h2>Here is a subsection</h2>
 <p>And here’s some addition text…</p>
 <pre class="r"><code>rnorm(10)</code></pre>
-<pre><code>##  [1] -1.29928418 -0.09092414 -0.34612576 -1.42719486  0.50638468  0.42962366
-##  [7] -1.48548917  3.20392917  1.31146301 -0.09893711</code></pre>
+<pre><code>##  [1] -0.40942544 -0.56687663  0.16146844  0.77204201 -1.58724029  0.26039731
+##  [7]  1.79312847 -0.44973078 -0.19281678 -0.05745182</code></pre>
 </div>
 <div id="links" class="section level2">
 <h2>Links</h2>
@@ -373,7 +385,22 @@ div.tocify {
 <div id="local-image" class="section level2">
 <h2>Local image</h2>
 <p>Here are my friends:</p>
-<p><img src="images/doggy.JPG" /></p>
+<p><img src="images/doggy.JPG" style="width:75%"></p>
+</div>
+<div id="quarterly-results" class="section level2 tabset">
+<h2 class="tabset">Quarterly Results</h2>
+<div id="by-product" class="section level3">
+<h3>By Product</h3>
+<p>This is my first tab and i can do stuff</p>
+</div>
+<div id="by-region" class="section level3">
+<h3>By Region</h3>
+<p>This is my second tab and it does other stuff</p>
+</div>
+</div>
+<div id="this-is-a-new-section" class="section level2">
+<h2>This is a new section</h2>
+<p>and it is really great</p>
 </div>
 <div id="link-to-page-within-the-site" class="section level2">
 <h2>Link to page within the site</h2>
@@ -416,6 +443,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {
